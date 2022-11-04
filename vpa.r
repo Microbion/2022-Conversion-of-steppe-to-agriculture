@@ -20,12 +20,10 @@ env_nat <- subset_samples(ps, is_natural) %>% sample_data %>% data.frame
 varpart.nat <- pcnm_vpa(otu_nat, env_nat)
 varpart.agr <- pcnm_vpa(otu_agr, env_agr)
 
-# exact values
-var_agr$part$indfract$Adj.R.square * 100
-var_nat$part$indfract$Adj.R.square * 100
-
 # plot
 var_agr <- varpart(otu_agr,varpart.agr[[1]],varpart.agr[[2]],varpart.agr[[3]])
+var_agr$part$indfract$Adj.R.square * 100
 plot(var_agr)
 var_nat <- varpart(otu_nat,varpart.nat[[1]],varpart.nat[[2]],varpart.nat[[3]])
+var_nat$part$indfract$Adj.R.square * 100
 plot(var_nat)
